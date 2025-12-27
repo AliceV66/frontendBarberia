@@ -1,0 +1,34 @@
+---
+interface Props {
+  className?: string;
+  text?: string;
+}
+
+const { className = "", text = "Reservar Cita" } = Astro.props;
+---
+
+<a
+  href="https://conectasitios.cl/agendar_cita/eyJpdiI6ImFnK29keTc0MWx0SER3UVRDamM3emc9PSIsInZhbHVlIjoieUNmSnEvb09BaHIzY2RCUHI5bWw2Zz09IiwibWFjIjoiYWQ1NmViNzIzZjMxMzNiZjA4OWFmZjQ2NDdlNDU1YTVkYzFiMzI4YTAwNjkwMjA2NWI1NTg5NzU5MGQ0ZjIwNCIsInRhZyI6IiJ9"
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={[
+    "inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-accent-500 to-accent-700 hover:from-accent-400 hover:to-accent-600 transition-all duration-300 shadow-lg hover:shadow-accent-500/30 transform hover:-translate-y-0.5",
+    className,
+  ]}
+>
+  {text}
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="h-5 w-5 ml-2 opacity-80"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+    />
+  </svg>
+</a>

@@ -1,0 +1,86 @@
+---
+const services = [
+  {
+    name: "Corte Estilo + Lavado",
+    price: "$37.000",
+    description: "Corte de cabello todos los estilos con lavado incluido. (1 hora)",
+    isPremium: false,
+  },
+  {
+    name: "Corte + Rebaje Barba",
+    price: "$19.500",
+    description: "Corte de cabello y rebaje de barba con máquina simple. (30 min)",
+    isPremium: false,
+  },
+  {
+    name: "Afeitado Cabeza",
+    price: "$29.500",
+    description: "Afeitado completo de cabeza con toalla caliente. (30 min)",
+    isPremium: false,
+  },
+  {
+    name: "VIP: Corte + Barba Completa",
+    price: "$45.000",
+    description: "Servicio VIP: Corte + afeitado clásico y definición/arreglo de barba. (1 hora)",
+    isPremium: true,
+  },
+  {
+    name: "VIP: Afeitado Cabeza + Barba",
+    price: "$55.000",
+    description: "Servicio VIP: Afeitado de cabeza + afeitado clásico/arreglo de barba. (1 hora)",
+    isPremium: true,
+  },
+  {
+    name: "VIP: Barba Completa",
+    price: "$29.500",
+    description: "Servicio VIP: Afeitado clásico y definición o arreglo de barba. (30 min)",
+    isPremium: false,
+  },
+  {
+    name: "Corte Niño (hasta 10 años)",
+    price: "$17.000",
+    description: "Corte de cabello para niños. (30 min)",
+    isPremium: false,
+  },
+  {
+    name: "Tratamiento Capilar",
+    price: "$15.000",
+    description: "Hidratación y cuidado profundo para tu cabello. (10 min)",
+    isPremium: false,
+  },
+];
+---
+
+<section id="servicios" class="py-20 bg-primary">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="font-serif text-4xl text-surface mb-4">Nuestros Servicios</h2>
+      <div class="w-24 h-1 bg-accent mx-auto"></div>
+    </div>
+
+    <div class="space-y-6">
+      {
+        services.map((service) => (
+          <div
+            class:list={[
+              "group relative p-6 rounded-lg transition-all duration-300 hover:bg-primary-dark border border-transparent",
+              service.isPremium ? "border-accent-500/30 bg-primary-dark/50 shadow-lg shadow-accent-900/10" : "hover:border-accent-500/20",
+            ]}
+          >
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-xl text-surface group-hover:text-accent-400 transition-colors">
+                {service.name}
+              </h3>
+              <span class="font-sans text-lg text-accent-500 font-medium">
+                {service.price}
+              </span>
+            </div>
+            <p class="font-sans text-surface-dim text-sm md:text-base">
+              {service.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
