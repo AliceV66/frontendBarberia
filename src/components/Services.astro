@@ -106,9 +106,12 @@ const services: ServiceCategory[] = [
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               {category.items.map((service) => (
-                <div
+                <a
+                  href="https://conectasitios.cl/agendar_cita/eyJpdiI6ImFnK29keTc0MWx0SER3UVRDamM3emc9PSIsInZhbHVlIjoieUNmSnEvb09BaHIzY2RCUHI5bWw2Zz09IiwibWFjIjoiYWQ1NmViNzIzZjMxMzNiZjA4OWFmZjQ2NDdlNDU1YTVkYzFiMzI4YTAwNjkwMjA2NWI1NTg5NzU5MGQ0ZjIwNCIsInRhZyI6IiJ9"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class:list={[
-                    "relative p-10 rounded-xl transition-all duration-300 group flex flex-col",
+                    "relative p-10 rounded-xl transition-all duration-300 group flex flex-col block",
                     service.isFeatured
                       ? "bg-gradient-to-br from-steel via-accent-light to-steel border-2 border-steel shadow-2xl scale-105 z-10 md:col-span-2 lg:col-span-1"
                       : "bg-charcoal border border-steel/10 hover:border-steel/30 hover:shadow-lg shadow-sm",
@@ -153,25 +156,7 @@ const services: ServiceCategory[] = [
                       {service.description}
                     </p>
                   )}
-
-                  <div
-                    class:list={[
-                      "mt-auto pt-4 border-t flex justify-end",
-                      service.isFeatured ? "border-onyx/10" : "border-steel/5",
-                    ]}
-                  >
-                    <span
-                      class:list={[
-                        "text-xs uppercase tracking-widest font-bold transition-colors",
-                        service.isFeatured
-                          ? "text-onyx/60 group-hover:text-onyx"
-                          : "text-steel/60 group-hover:text-steel",
-                      ]}
-                    >
-                      Ver detalles →
-                    </span>
-                  </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
