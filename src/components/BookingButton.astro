@@ -4,7 +4,7 @@ interface Props {
   text?: string;
 }
 
-const { className = "", text = "Reservar Cita" } = Astro.props;
+const { className = "", text = "Agenda Ahora!" } = Astro.props;
 ---
 
 <a
@@ -12,7 +12,7 @@ const { className = "", text = "Reservar Cita" } = Astro.props;
   target="_blank"
   rel="noopener noreferrer"
   class:list={[
-    "inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-accent-500 to-accent-700 hover:from-accent-400 hover:to-accent-600 transition-all duration-300 shadow-lg hover:shadow-accent-500/30 transform hover:-translate-y-0.5",
+    "inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-onyx bg-gradient-to-r from-steel to-accent-dark hover:from-accent-light hover:to-steel transition-all duration-300 shadow-lg hover:shadow-steel/30 transform hover:-translate-y-0.5",
     className,
   ]}
 >
@@ -29,6 +29,6 @@ const { className = "", text = "Reservar Cita" } = Astro.props;
       stroke-linejoin="round"
       stroke-width="2"
       d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-    />
+    ></path>
   </svg>
 </a>

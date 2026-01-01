@@ -1,40 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0f172a;
-  /* Slate 900 - Deep Metallic Blue/Black */
-  --color-primary-dark: #020617;
-  /* Slate 950 */
+  /* Dark Theme Palette - Named Colors */
+  --color-onyx: #121212;
+  /* Fondo Principal */
+  --color-charcoal: #1E1E1E;
+  /* Superficies (Cards) */
+  --color-smoke: #E0E0E0;
+  /* Texto Principal */
+  --color-silver: #A0A0A0;
+  /* Texto Secundario */
+  --color-steel: #D1D5DB;
+  /* Acento (Metal) */
 
-  /* Metallic / Silver Palette (based on Slate/Gray) */
-  --color-accent-50: #f8fafc;
-  --color-accent-100: #f1f5f9;
-  --color-accent-200: #e2e8f0;
-  --color-accent-300: #cbd5e1;
-  /* Light Silver */
-  --color-accent-400: #94a3b8;
-  /* Silver */
-  --color-accent-500: #64748b;
-  /* Steel */
-  --color-accent-600: #475569;
-  --color-accent-700: #334155;
-  --color-accent-800: #1e293b;
-  --color-accent-900: #0f172a;
-  --color-accent-950: #020617;
-
-  /* Aliases */
-  --color-accent: #cbd5e1;
-  /* Main accent is now Light Silver for dark backgrounds */
-  --color-accent-light: #e2e8f0;
-  --color-accent-dark: #64748b;
-
-  --color-surface: #f8fafc;
-  /* Very light gray/white */
-  --color-surface-dim: #94a3b8;
-  /* Silver/Gray for dimmed text */
+  /* Semantic Aliases (Optional, but using named colors is safer in TW4) */
+  --color-accent: var(--color-steel);
+  --color-accent-light: #E5E7EB;
+  --color-accent-dark: #9CA3AF;
 
   --color-success: #10b981;
-  /* Emerald 500 */
 
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Playfair Display', serif;

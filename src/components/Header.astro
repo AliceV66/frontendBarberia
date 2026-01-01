@@ -2,27 +2,49 @@
 import BookingButton from "./BookingButton.astro";
 ---
 
-<header class="fixed w-full top-0 z-50 bg-primary/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+<header
+  class="fixed w-full top-0 z-50 bg-onyx/80 backdrop-blur-md border-b border-steel/10 transition-all duration-300"
+>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       <!-- Logo -->
       <div class="flex-shrink-0 flex items-center">
         <a href="/" class="block">
-          <img src="/logo-white.png" alt="Maestro la Navaja" class="h-16 w-auto object-contain drop-shadow-lg" />
+          <img
+            src="/logo-white.png"
+            alt="Maestro la Navaja"
+            class="h-16 w-auto object-contain invert grayscale brightness-0"
+          />
         </a>
       </div>
 
       <!-- Desktop Menu -->
       <nav class="hidden md:flex space-x-8 items-center">
-        <a href="#servicios" class="text-surface-dim hover:text-accent transition-colors text-sm uppercase tracking-widest">Servicios</a>
+        <a
+          href="#servicios"
+          class="text-silver hover:text-steel transition-colors text-sm uppercase tracking-widest"
+          >Servicios</a
+        >
         <BookingButton className="px-4 py-2 text-sm" text="Reservar" />
       </nav>
 
       <!-- Mobile Menu Button (Placeholder for interactivity) -->
       <div class="md:hidden flex items-center">
-        <button class="text-surface hover:text-accent focus:outline-none" aria-label="Menú principal">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <button
+          class="text-smoke hover:text-steel focus:outline-none"
+          aria-label="Menú principal"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>

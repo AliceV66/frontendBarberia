@@ -1,86 +1,189 @@
 ---
-const services = [
+import BookingButton from "./BookingButton.astro";
+
+interface ServiceItem {
+  name: string;
+  price: string;
+  description?: string;
+  isPremium?: boolean;
+  isFeatured?: boolean;
+}
+
+interface ServiceCategory {
+  category: string;
+  items: ServiceItem[];
+}
+
+const services: ServiceCategory[] = [
   {
-    name: "Corte Estilo + Lavado",
-    price: "$37.000",
-    description: "Corte de cabello todos los estilos con lavado incluido. (1 hora)",
-    isPremium: false,
+    category: "VIP & Spa Experience",
+    items: [
+      {
+        name: "Servicios VIP: afeitado de cabeza + afeitado clásico o definición y arreglo barba",
+        price: "$55.000",
+        description:
+          "Servicio de afeitado con paños caliente - frío y finaliza con masaje facial",
+        isPremium: true,
+      },
+      {
+        name: "Servicio VIP: corte + afeitado clásico y definición o arreglo de barba",
+        price: "$45.000",
+        description:
+          "Servicio de afeitado con paños caliente - frío y finaliza con masaje facial",
+        isPremium: true,
+      },
+      {
+        name: "Servicio VIP: afeitado clásico y definición o arreglo de barba",
+        price: "$29.500",
+        description:
+          "Servicio de afeitado con paños caliente - frío y finaliza con masaje facial",
+        isPremium: true,
+      },
+      {
+        name: "Afeitado cabeza",
+        price: "Desde $29.500",
+        description:
+          "Servicio de afeitado de cabeza con paños caliente - frío y finaliza con masaje capilar",
+      },
+    ],
   },
   {
-    name: "Corte + Rebaje Barba",
-    price: "$19.500",
-    description: "Corte de cabello y rebaje de barba con máquina simple. (30 min)",
-    isPremium: false,
+    category: "Cortes & Estilos",
+    items: [
+      {
+        name: "Corte todos los estilos + lavado cabello",
+        price: "$19.500",
+      },
+    ],
   },
   {
-    name: "Afeitado Cabeza",
-    price: "$29.500",
-    description: "Afeitado completo de cabeza con toalla caliente. (30 min)",
-    isPremium: false,
+    category: "Packs & Niños",
+    items: [
+      {
+        name: "Pack: adulto + niño hasta 10 años",
+        price: "$33.000",
+      },
+      {
+        name: "Pack: 2 corte cabello adulto",
+        price: "$37.000",
+      },
+      {
+        name: "Corte cabello niño hasta 10 años",
+        price: "$17.000",
+      },
+    ],
   },
   {
-    name: "VIP: Corte + Barba Completa",
-    price: "$45.000",
-    description: "Servicio VIP: Corte + afeitado clásico y definición/arreglo de barba. (1 hora)",
-    isPremium: true,
-  },
-  {
-    name: "VIP: Afeitado Cabeza + Barba",
-    price: "$55.000",
-    description: "Servicio VIP: Afeitado de cabeza + afeitado clásico/arreglo de barba. (1 hora)",
-    isPremium: true,
-  },
-  {
-    name: "VIP: Barba Completa",
-    price: "$29.500",
-    description: "Servicio VIP: Afeitado clásico y definición o arreglo de barba. (30 min)",
-    isPremium: false,
-  },
-  {
-    name: "Corte Niño (hasta 10 años)",
-    price: "$17.000",
-    description: "Corte de cabello para niños. (30 min)",
-    isPremium: false,
-  },
-  {
-    name: "Tratamiento Capilar",
-    price: "$15.000",
-    description: "Hidratación y cuidado profundo para tu cabello. (10 min)",
-    isPremium: false,
+    category: "Tratamientos",
+    items: [
+      {
+        name: "Tratamiento capilar",
+        price: "$15.000",
+        description:
+          "Ampolla capilar fortalece el cuero cabelludo ayudando aumentar la densidad capilar y proporciona nutrición a las células, actúa hidratando y nutriendo el cabello",
+      },
+    ],
   },
 ];
 ---
 
-<section id="servicios" class="py-20 bg-primary">
-  <div class="max-w-4xl mx-auto px-4">
+<section id="servicios" class="py-20 bg-onyx">
+  <div class="max-w-6xl mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="font-serif text-4xl text-surface mb-4">Nuestros Servicios</h2>
+      <h2 class="font-serif text-4xl md:text-5xl text-smoke mb-4">
+        Elige tu Experiencia
+      </h2>
       <div class="w-24 h-1 bg-accent mx-auto"></div>
     </div>
 
-    <div class="space-y-6">
+    <div class="space-y-16">
       {
-        services.map((service) => (
-          <div
-            class:list={[
-              "group relative p-6 rounded-lg transition-all duration-300 hover:bg-primary-dark border border-transparent",
-              service.isPremium ? "border-accent-500/30 bg-primary-dark/50 shadow-lg shadow-accent-900/10" : "hover:border-accent-500/20",
-            ]}
-          >
-            <div class="flex justify-between items-baseline mb-2">
-              <h3 class="font-serif text-xl text-surface group-hover:text-accent-400 transition-colors">
-                {service.name}
-              </h3>
-              <span class="font-sans text-lg text-accent-500 font-medium">
-                {service.price}
-              </span>
+        services.map((category) => (
+          <div class="category-group">
+            <h3 class="font-serif text-2xl text-steel mb-8 border-l-4 border-steel pl-4 uppercase tracking-widest">
+              {category.category}
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {category.items.map((service) => (
+                <div
+                  class:list={[
+                    "relative p-10 rounded-xl transition-all duration-300 group flex flex-col",
+                    service.isFeatured
+                      ? "bg-gradient-to-br from-steel via-accent-light to-steel border-2 border-steel shadow-2xl scale-105 z-10 md:col-span-2 lg:col-span-1"
+                      : "bg-charcoal border border-steel/10 hover:border-steel/30 hover:shadow-lg shadow-sm",
+                  ]}
+                >
+                  {service.isFeatured && (
+                    <span class="absolute -top-3 left-6 bg-steel text-onyx text-xs font-bold px-3 py-1 rounded-full uppercase tracking-tighter shadow-md">
+                      Recomendado
+                    </span>
+                  )}
+
+                  <div class="flex justify-between items-start mb-4">
+                    <h4
+                      class:list={[
+                        "font-serif text-xl pr-4",
+                        service.isFeatured
+                          ? "text-onyx"
+                          : service.isPremium
+                            ? "text-steel"
+                            : "text-smoke",
+                      ]}
+                    >
+                      {service.name}
+                    </h4>
+                    <span
+                      class:list={[
+                        "font-sans font-bold whitespace-nowrap text-lg",
+                        service.isFeatured ? "text-onyx" : "text-steel",
+                      ]}
+                    >
+                      {service.price}
+                    </span>
+                  </div>
+
+                  {service.description && (
+                    <p
+                      class:list={[
+                        "text-sm font-light leading-relaxed mb-4 italic",
+                        service.isFeatured ? "text-onyx/80" : "text-silver",
+                      ]}
+                    >
+                      {service.description}
+                    </p>
+                  )}
+
+                  <div
+                    class:list={[
+                      "mt-auto pt-4 border-t flex justify-end",
+                      service.isFeatured ? "border-onyx/10" : "border-steel/5",
+                    ]}
+                  >
+                    <span
+                      class:list={[
+                        "text-xs uppercase tracking-widest font-bold transition-colors",
+                        service.isFeatured
+                          ? "text-onyx/60 group-hover:text-onyx"
+                          : "text-steel/60 group-hover:text-steel",
+                      ]}
+                    >
+                      Ver detalles →
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
-            <p class="font-sans text-surface-dim text-sm md:text-base">
-              {service.description}
-            </p>
           </div>
         ))
       }
+    </div>
+
+    <div class="mt-20 text-center">
+      <p class="text-silver mb-8 italic">
+        ¿No encuentras lo que buscas? Consúltanos directamente.
+      </p>
+      <BookingButton className="text-lg px-10 py-4" />
     </div>
   </div>
 </section>

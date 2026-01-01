@@ -2,32 +2,40 @@
 import BookingButton from "./BookingButton.astro";
 ---
 
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<section
+  class="relative h-screen flex items-center justify-center overflow-hidden"
+>
   <!-- Background Image/Video Placeholder -->
   <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-gradient-to-b from-primary-dark/90 via-primary/80 to-primary z-10"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-onyx/50 via-onyx/40 to-onyx/70 z-10"
+    >
+    </div>
     <img
       src="/hero-bg.png"
       alt="Barberia Maestro la Navaja"
-      class="w-full h-full object-cover opacity-50"
+      class="w-full h-full object-cover opacity-50 grayscale"
     />
   </div>
 
   <!-- Content -->
   <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
-    <h1 class="font-serif text-5xl md:text-7xl font-bold text-surface mb-6 tracking-wide">
-      Maestro la <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 via-accent-100 to-accent-400">Navaja</span>
+    <h1
+      class="font-serif text-5xl md:text-7xl font-bold text-smoke mb-6 tracking-wide"
+    >
+      Maestro la <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-accent-dark via-steel to-accent-light"
+        >Navaja</span
+      >
     </h1>
-    <p class="font-sans text-xl md:text-2xl text-surface-dim mb-10 font-light max-w-2xl mx-auto">
-      Más que un corte, una experiencia de caballero. Redescubre el arte del cuidado personal.
+    <p
+      class="font-sans text-xl md:text-2xl text-silver mb-10 font-light max-w-2xl mx-auto"
+    >
+      Expertos en el cuidado personal
     </p>
-    
+
     <div class="flex flex-col items-center gap-4">
       <BookingButton className="text-lg px-8 py-4" />
-      <p class="text-sm text-surface-dim mt-4 flex items-center gap-2">
-        <span class="text-accent">★★★★★</span>
-        Más de 500 clientes satisfechos
-      </p>
     </div>
   </div>
 </section>
