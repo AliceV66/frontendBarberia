@@ -3,7 +3,6 @@ import BookingButton from "./BookingButton.astro";
 
 interface ServiceItem {
   name: string;
-  price: string;
   description?: string;
   isPremium?: boolean;
   isFeatured?: boolean;
@@ -20,28 +19,24 @@ const services: ServiceCategory[] = [
     items: [
       {
         name: "Servicios VIP: afeitado de cabeza + afeitado clásico o definición y arreglo barba",
-        price: "$55.000",
         description:
           "Servicio de afeitado con paños caliente - frío y finaliza con masaje facial",
         isPremium: true,
       },
       {
         name: "Servicio VIP: corte + afeitado clásico y definición o arreglo de barba",
-        price: "$45.000",
         description:
           "Servicio de afeitado con paños caliente - frío y finaliza con masaje facial",
         isPremium: true,
       },
       {
         name: "Servicio VIP: afeitado clásico y definición o arreglo de barba",
-        price: "$29.500",
         description:
           "Servicio de afeitado con paños caliente - frío y finaliza con masaje facial",
         isPremium: true,
       },
       {
         name: "Afeitado cabeza",
-        price: "Desde $29.500",
         description:
           "Servicio de afeitado de cabeza con paños caliente - frío y finaliza con masaje capilar",
       },
@@ -52,7 +47,6 @@ const services: ServiceCategory[] = [
     items: [
       {
         name: "Corte todos los estilos + lavado cabello",
-        price: "$19.500",
       },
     ],
   },
@@ -61,15 +55,12 @@ const services: ServiceCategory[] = [
     items: [
       {
         name: "Pack: adulto + niño hasta 10 años",
-        price: "$33.000",
       },
       {
         name: "Pack: 2 corte cabello adulto",
-        price: "$37.000",
       },
       {
         name: "Corte cabello niño hasta 10 años",
-        price: "$17.000",
       },
     ],
   },
@@ -78,7 +69,6 @@ const services: ServiceCategory[] = [
     items: [
       {
         name: "Tratamiento capilar",
-        price: "$15.000",
         description:
           "Ampolla capilar fortalece el cuero cabelludo ayudando aumentar la densidad capilar y proporciona nutrición a las células, actúa hidratando y nutriendo el cabello",
       },
@@ -136,14 +126,6 @@ const services: ServiceCategory[] = [
                     >
                       {service.name}
                     </h4>
-                    <span
-                      class:list={[
-                        "font-sans font-bold whitespace-nowrap text-lg",
-                        service.isFeatured ? "text-onyx" : "text-steel",
-                      ]}
-                    >
-                      {service.price}
-                    </span>
                   </div>
 
                   {service.description && (

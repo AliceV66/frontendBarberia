@@ -3,18 +3,18 @@ import BookingButton from "./BookingButton.astro";
 ---
 
 <section
-  class="relative h-screen flex items-center justify-center overflow-hidden"
+  class="relative min-h-screen h-[100dvh] flex items-center justify-center overflow-hidden"
 >
   <!-- Background Image/Video Placeholder -->
-  <div class="absolute inset-0 z-0">
+  <div class="absolute inset-0 z-0 w-full h-full">
     <div
-      class="absolute inset-0 bg-gradient-to-b from-onyx/50 via-onyx/40 to-onyx/70 z-10"
+      class="absolute inset-0 bg-gradient-to-b from-onyx/70 via-onyx/50 to-onyx/80 z-10 w-full h-full"
     >
     </div>
     <img
-      src="/hero-bg.png"
+      src="/hero-bg-enhanced.png"
       alt="Barberia Maestro la Navaja"
-      class="w-full h-full object-cover opacity-50 grayscale"
+      class="w-full h-full object-cover object-center opacity-80"
     />
   </div>
 
